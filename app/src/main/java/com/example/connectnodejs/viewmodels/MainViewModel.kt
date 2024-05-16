@@ -35,10 +35,11 @@ class MainViewModel : ViewModel() {
     var errorLiveData = MutableLiveData<String>()
     var resetAudio = MutableLiveData<Unit>()
     var bottomBarTab = MutableLiveData<Int>()
+    var songControlBook=MutableLiveData<Book>()
 
     var appState = MutableLiveData<Stack<State>>()
-   var selectedBookStack = MutableLiveData<Stack<Book>>()
-    var selectedAuthorStack = MutableLiveData<Stack<Author>>()
+    private var selectedBookStack = MutableLiveData<Stack<Book>>()
+    private var selectedAuthorStack = MutableLiveData<Stack<Author>>()
 
     private var updateSubscription = MutableLiveData<Unit>()
     private var updateSubscriptionHistory = MutableLiveData<Unit>()
@@ -200,22 +201,26 @@ class MainViewModel : ViewModel() {
         selectedAuthorStack.value=newStack
     }
 
-    fun removeSelectedBook(){
-        selectedBookStack.value!!.pop()
+    private fun removeSelectedBook(){
+        if(selectedBookStack.value!!.size>0){
+            selectedBookStack.value!!.pop()
+        }
     }
 
-    fun removeSelectedAuthor(){
+    private fun removeSelectedAuthor(){
         selectedAuthorStack.value!!.pop()
     }
 
-    fun getSelectedBook(): Book {
-        return selectedBookStack.value!!.peek()
+    fun getSelectedBook(): Book? {
+        if(selectedBookStack.value!!.size>0){
+            return selectedBookStack.value!!.peek()
+        }
+        return null
     }
 
     fun getSelectedAuthor(): Author {
         return selectedAuthorStack.value!!.peek()
     }
-
 
     companion object {
 //        enum class CurrentState {

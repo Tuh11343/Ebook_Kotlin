@@ -84,12 +84,13 @@
 
                         <ImageView
                             android:id="@+id/image1"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
                             android:layout_alignParentStart="true"
                             android:layout_centerInParent="true"
                             android:layout_marginLeft="10dp"
-                            android:src="@drawable/googleg_standard_color_18" />
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/icon_bookmark_100" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -112,12 +113,12 @@
 
                         <ImageView
                             android:id="@+id/image2"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
                             android:layout_alignParentStart="true"
                             android:layout_centerInParent="true"
                             android:layout_marginLeft="10dp"
-                            android:src="@drawable/googleg_standard_color_18" />
+                            android:src="@drawable/icon_book_100" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -190,7 +191,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="100$ / tháng"
+                    android:text="200$ / tháng"
                     android:textColor="@color/black"
                     android:textSize="18dp" />
 
@@ -212,12 +213,12 @@
 
                         <ImageView
                             android:id="@+id/image3"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
                             android:layout_alignParentStart="true"
                             android:layout_centerInParent="true"
                             android:layout_marginLeft="10dp"
-                            android:src="@drawable/googleg_standard_color_18" />
+                            android:src="@drawable/icon_bookmark_100" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -241,12 +242,12 @@
 
                         <ImageView
                             android:id="@+id/image4"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
                             android:layout_alignParentStart="true"
                             android:layout_centerInParent="true"
                             android:layout_marginLeft="10dp"
-                            android:src="@drawable/googleg_standard_color_18" />
+                            android:src="@drawable/icon_book_100" />
 
                         <TextView
                             android:layout_width="match_parent"

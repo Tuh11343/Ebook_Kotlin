@@ -84,7 +84,7 @@ class FragmentDetailBook(
 
     private fun resetUI(){
         binding.scrollView.scrollTo(0,0)
-        selectedBook=mainViewModel.getSelectedBook()
+        selectedBook=mainViewModel.getSelectedBook()!!
 
         binding.bookName.text = selectedBook.name
         binding.bookDescription.text = selectedBook.description ?: "Không có thông tin về sách"
