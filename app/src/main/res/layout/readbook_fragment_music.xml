@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/linear_background"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/song_circle" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnBookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/button_icon"
+            android:src="@drawable/icon_bookmark"
+            app:shapeAppearanceOverlay="@style/IconButton"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:hint="Peter Pan wtf wtf wtf"
+            android:maxWidth="200dp"
+            android:maxLines="1"
+            android:text="Test"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="normal" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/button_icon"
+            android:src="@drawable/icon_favorite"
+            app:shapeAppearanceOverlay="@style/IconButton"
+            app:tint="@color/white"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="50"
+        android:progressDrawable="@drawable/custom_seekbar"
+        android:thumb="@drawable/custom_thumb"
+        android:splitTrack="false"
+        android:layout_margin="10dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/currentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="25dp"
+            />
+
+        <TextView
+            android:id="@+id/totalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="25dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/button_icon"
+            android:src="@drawable/icon_play"
+            app:shapeAppearanceOverlay="@style/IconButton"
+            app:tint="@color/white"
+            android:scaleType="center"
+            app:maxImageSize="32dp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnRewind"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/button_icon"
+            android:src="@drawable/icon_bf"
+            app:shapeAppearanceOverlay="@style/IconButton"
+            app:tint="@color/white"
+            app:fabCustomSize="40dp"
+            android:scaleType="center"
+            android:layout_toLeftOf="@+id/btnPlay"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="25dp"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnFastForward"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/button_icon"
+            android:src="@drawable/icon_ff"
+            app:shapeAppearanceOverlay="@style/IconButton"
+            app:tint="@color/white"
+            app:fabCustomSize="40dp"
+            android:scaleType="center"
+            android:layout_toRightOf="@+id/btnPlay"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnRepeat"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/button_icon"
+            android:src="@drawable/icon_repeat"
+            app:shapeAppearanceOverlay="@style/IconButton"
+            app:tint="@color/white"
+            app:fabCustomSize="40dp"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

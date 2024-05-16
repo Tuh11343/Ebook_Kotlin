@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:id="@+id/view"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bookImgCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardCornerRadius="15dp">
+
+        <ImageView
+            android:id="@+id/bookImg"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/song_circle" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/bookName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/bookImgCardView"
+        android:gravity="left|center"
+        android:text="Tứ Thư Lãnh Đạo - Thuật Lãnh Đạo"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

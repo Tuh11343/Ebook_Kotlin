@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="310dp"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="20dp"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:backgroundTint="@color/light_blue"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="8dp"
+                >
+
+                <ImageView
+                    android:id="@+id/bookImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/song_circle" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/bookName"
+                style="@style/Content_Black"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/cardView"
+                android:layout_toLeftOf="@id/btnPlay"
+                android:gravity="center|left"
+                android:text="Câu lạc bộ Án Mạng Ngày Thứ Năm"
+                />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnPlay"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/light_blue"
+                android:contentDescription="Test"
+                android:src="@drawable/icon_play"
+                app:shapeAppearanceOverlay="@style/IconButton"
+                app:borderWidth="2dp"
+                app:tint="@color/org_cl"
+                android:layout_alignParentRight="true"
+                app:fabCustomSize="36dp"
+                />
+        </RelativeLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

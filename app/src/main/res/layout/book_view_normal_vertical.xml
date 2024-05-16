@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:id="@+id/bookView"
+    android:layout_marginBottom="20dp"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/bookImg"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/song_circle" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/bookName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Để trở thành nhà quản lý hiệu quả"
+        style="@style/Black_Bold_18"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        />
+
+</LinearLayout>

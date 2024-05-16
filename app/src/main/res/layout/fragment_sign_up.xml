@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_100"
+
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/layoutTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đăng ký tài khoản"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/btnClose"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/circle_background"
+                    android:scaleType="center"
+                    android:src="@drawable/icon_cancel"
+                    app:tint="@color/black" />
+
+
+            </RelativeLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/layoutTitle"
+                app:cardCornerRadius="50dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+                    <TextView
+                        android:id="@+id/welcome"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Chào mừng đến với EBook!"
+                        android:textColor="@color/black"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/fullName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/icon_person_24"
+                            android:drawablePadding="10dp"
+                            android:hint="Hãy điền vào họ tên"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/gmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/icon_mail_24"
+                            android:drawablePadding="10dp"
+                            android:hint="Hãy điền vào email"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/icon_password_24"
+                            android:drawablePadding="10dp"
+                            android:hint="Hãy điền vào mật khẩu"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/phoneNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/icon_phone_number_24"
+                            android:drawablePadding="10dp"
+                            android:hint="Hãy điền vào số điện thoại"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSignUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="@color/white_60"
+                        android:text="Đăng Ký"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/tvText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Hoặc cách khác"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="16dp"
+                            android:layout_toLeftOf="@id/tvText"
+                            android:background="@color/black" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="16dp"
+                            android:layout_toRightOf="@id/tvText"
+                            android:background="@color/black" />
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/btnGoogle"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/common_google_signin_btn_icon_dark_normal" />
+
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginTop="20dp">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt1"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_alignParentLeft="true"-->
+<!--                            android:text="Nếu bạn đã có tài khoản:"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="18dp" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/btnSignIn"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginLeft="5dp"-->
+<!--                            android:layout_toRightOf="@+id/txt1"-->
+<!--                            android:text="Đăng Nhập"-->
+<!--                            android:textColor="@color/red"-->
+<!--                            android:textSize="18dp"-->
+<!--                            android:textStyle="bold" />-->
+
+<!--                    </RelativeLayout>-->
+
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminateTint="@color/red"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

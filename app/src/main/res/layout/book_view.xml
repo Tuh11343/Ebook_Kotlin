@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginRight="20dp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/bookLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="190dp"
+        >
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp">
+
+            <ImageView
+                android:id="@+id/bookImg"
+                android:layout_width="130dp"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/song_circle" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/bookType"
+            style="@style/Content_White_BookView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_corner_orange"
+            android:padding="5dp"
+            android:text="Book Name" />
+
+    </RelativeLayout>
+
+    <!--<RelativeLayout
+        android:id="@+id/bookLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="190dp"
+        android:layout_toRightOf="@id/bookLayout"
+        android:layout_marginLeft="20dp"
+        >
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            >
+
+            <ImageView
+                android:id="@+id/bookImg2"
+                android:layout_width="130dp"
+                android:layout_height="180dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/song_circle"
+                />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/bookName2"
+            style="@style/Content_White_BookView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_corner_orange"
+            android:padding="5dp"
+            android:text="Book Name" />
+
+    </RelativeLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/bookLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="190dp"
+        android:layout_below="@id/bookLayout"
+        android:layout_marginTop="10dp"
+        >
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            >
+
+            <ImageView
+                android:id="@+id/bookImg3"
+                android:layout_width="130dp"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/song_circle"
+                />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/bookType3"
+            style="@style/Content_White_BookView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_corner_orange"
+            android:padding="5dp"
+            android:text="Book Name" />
+
+    </RelativeLayout>
+
+    <!--<RelativeLayout
+        android:id="@+id/bookLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="190dp"
+        android:layout_below="@id/bookLayout"
+        android:layout_toRightOf="@id/bookLayout3"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        >
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            >
+
+            <ImageView
+                android:id="@+id/bookImg4"
+                android:layout_width="130dp"
+                android:layout_height="180dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/song_circle"
+                />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/bookName4"
+            style="@style/Content_White_BookView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_corner_orange"
+            android:padding="5dp"
+            android:text="Book Name"
+
+            />
+
+    </RelativeLayout>-->
+
+
+</RelativeLayout>

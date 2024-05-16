@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?><!--Khong co appbar,co bottom bar-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/blue_100"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/White_Bold_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Tài khoản" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/icon_person_big" />
+
+        <TextView
+            android:id="@+id/userName"
+            style="@style/White_Normal_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/userImage"
+            android:text="Tuh Do" />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            >
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                style="@style/Black_Bold_18"
+                android:text="Mua gói hội viên nội dung độc quyền"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUpgrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/gray_80"
+                style="@style/Black_Normal_16"
+                android:text="Nâng cấp ngay"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Black_Bold_20"
+                android:text="Hỗ trợ"
+                android:layout_marginTop="20dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnContactSupport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Black_Normal_16"
+                android:text="Liên hệ hỗ trợ"
+                android:backgroundTint="@color/gray_80"
+                android:layout_marginTop="20dp"
+                android:gravity="left|center"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAboutUs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Black_Normal_16"
+                android:text="Về chúng tôi"
+                android:backgroundTint="@color/gray_80"
+                android:layout_marginTop="20dp"
+                android:gravity="left|center"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Black_Normal_16"
+                android:text="Chia sẻ ứng dụng"
+                android:backgroundTint="@color/gray_80"
+                android:layout_marginTop="20dp"
+                android:gravity="left|center"
+                />
+
+            <TextView
+                android:id="@+id/btnLogOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Black_Bold_18"
+                android:text="Đăng xuất"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                />
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

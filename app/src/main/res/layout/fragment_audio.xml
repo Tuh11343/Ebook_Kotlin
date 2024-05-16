@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:id="@+id/btnDown"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/icon_arrow_down"
+        android:backgroundTint="@color/white"
+        android:layout_margin="20dp"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="20dp"
+        android:id="@+id/bookImg"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/song_circle"
+        android:scaleType="centerCrop"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        >
+
+        <!--<ImageView
+            android:id="@+id/btnBookmark"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/icon_bookmark" />-->
+
+        <TextView
+            android:id="@+id/bookName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:hint="Peter Pan wtf wtf wtf"
+            android:maxWidth="200dp"
+            android:maxLines="1"
+            android:text="Test"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="normal" />
+
+        <!--<ImageView
+            android:id="@+id/btnFavorite"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/icon_favorite" />-->
+
+    </RelativeLayout>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="0"
+        android:progressDrawable="@drawable/custom_seekbar"
+        android:thumb="@drawable/custom_thumb"
+        android:splitTrack="false"
+        android:layout_margin="10dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/currentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="25dp"
+            />
+
+        <TextView
+            android:id="@+id/totalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="25dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/btnPlay"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_play" />
+
+        <ImageView
+            android:id="@+id/btnRewind"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/btnPlay"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_bf" />
+
+        <ImageView
+            android:id="@+id/btnFastForward"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/btnPlay"
+            android:layout_centerVertical="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_ff" />
+
+        <ImageView
+            android:id="@+id/btnRepeat"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_repeat"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

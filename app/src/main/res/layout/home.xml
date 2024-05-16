@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/bottomView"
+        android:layout_alignParentBottom="true"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/songView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottomBar"
+            android:backgroundTint="@color/purple"
+            app:cardCornerRadius="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/songImg"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/song_circle" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="@color/button_icon"
+                    android:contentDescription="Test"
+                    android:src="@drawable/icon_play"
+                    app:shapeAppearanceOverlay="@style/IconButton"
+                    app:tint="@color/white" />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <nl.joery.animatedbottombar.AnimatedBottomBar
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#FFF"
+            app:abb_indicatorAppearance="round"
+            app:abb_indicatorHeight="4dp"
+            app:abb_indicatorMargin="16dp"
+            app:abb_selectedIndex="0"
+            app:abb_selectedTabType="text"
+            app:abb_tabs="@menu/bottom_menu" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

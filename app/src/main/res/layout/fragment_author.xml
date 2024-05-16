@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/blue_100"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/firstLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/icon_back" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/authorImg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/background_readbook"
+            />
+
+        <TextView
+            android:id="@+id/authorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/White_Bold_18"
+            android:layout_below="@id/authorImg"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="Robert T.Kiyosaki"
+            android:layout_marginBottom="20dp"
+            />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@id/firstLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="25dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                >
+
+                <TextView
+                    android:id="@+id/authorDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Black_Normal_16"
+                    android:text="Testing"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/bookAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Black_Bold_18"
+                        android:text="18 Sách nói"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <Spinner
+                        android:id="@+id/filter_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_alignParentEnd="true"
+                        android:entries="@array/filter_options" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/bookList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/book_view_normal" />
+
+
+            </LinearLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
+
+
+</RelativeLayout>
+
