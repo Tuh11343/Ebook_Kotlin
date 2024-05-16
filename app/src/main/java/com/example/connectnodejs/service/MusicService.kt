@@ -9,7 +9,6 @@ import android.app.Service
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
 import android.media.MediaPlayer
 import android.os.Binder
@@ -133,20 +132,36 @@ class MusicService : Service() {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
 
-        return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle(songName)
-            .setContentText(songAuthor)
-            .setSmallIcon(R.drawable.icon_favorite)
-            .setStyle(mediaStyle)
-            .addAction(getRewindAction())
-            .addAction(getPlayAction())
-            .addAction(getFFAction())
-            .addAction(getCloseAction())
-            .setLargeIcon(bitmap)
-            .setSound(null)
-            .setContentIntent(pendingIntent)
-            .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
-            .build()
+        if(bitmap!=null){
+            return NotificationCompat.Builder(this, CHANNEL_ID)
+                .setContentTitle(songName)
+                .setContentText(songAuthor)
+                .setSmallIcon(R.drawable.icon_favorite)
+                .setStyle(mediaStyle)
+                .addAction(getRewindAction())
+                .addAction(getPlayAction())
+                .addAction(getFFAction())
+                .addAction(getCloseAction())
+                .setLargeIcon(bitmap)
+                .setSound(null)
+                .setContentIntent(pendingIntent)
+                .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
+                .build()
+        }else{
+            return NotificationCompat.Builder(this, CHANNEL_ID)
+                .setContentTitle(songName)
+                .setContentText(songAuthor)
+                .setSmallIcon(R.drawable.icon_favorite)
+                .setStyle(mediaStyle)
+                .addAction(getRewindAction())
+                .addAction(getPlayAction())
+                .addAction(getFFAction())
+                .addAction(getCloseAction())
+                .setSound(null)
+                .setContentIntent(pendingIntent)
+                .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
+                .build()
+        }
     }
 
     private fun setUpSeekBar(
@@ -201,7 +216,9 @@ class MusicService : Service() {
 
     fun cancelNotification() {
         if (isNotificationCreated) {
+
             stopForeground(STOP_FOREGROUND_REMOVE)
+            stopSelf()
             isNotificationCreated = false
             if(mediaPlayer!!.isPlaying){
                 btnCloseClick.value=Unit

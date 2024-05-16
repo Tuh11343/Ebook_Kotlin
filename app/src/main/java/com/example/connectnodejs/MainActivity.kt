@@ -105,6 +105,7 @@ class MainActivity : AppCompatActivity() {
         createNotificationChannel()
         setUpAlarm()
         loadSignInAccount()
+        onBackPressedHandle()
     }
 
     private fun setUpUI() {
@@ -414,11 +415,26 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun observeMusicBtnPlayClick(){
+        musicService?.btnPlayClick?.observe(this){
+            if (musicService?.mediaPlayer?.isPlaying == true) {
+                binding.btnPlay.setImageResource(R.drawable.icon_pause)
+            } else {
+                binding.btnPlay.setImageResource(R.drawable.icon_play)
+            }
+        }
+    }
+
     private fun observeSongControlVisibility() {
         mainViewModel.songControlVisibility.observe(this) {
+            observeMusicBtnPlayClick()
             when (it) {
                 true -> {
                     if (musicService?.isNotificationCreated == true) {
+
+                        var book:Book?=null
+                        if(mainViewModel.getSelectedBook()!=null)
+                            book=mainViewModel.getSelectedBook()!!
 
                         binding.songControl.visibility = View.VISIBLE
 
@@ -432,13 +448,16 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
 
-                        //update songControl data
-                        Glide.with(this)
-                            .load(mainViewModel.getSelectedBook().image)
-                            .placeholder(R.drawable.song_circle)
-                            .error(R.drawable.song_circle)
-                            .into(binding.songImg)
-                        binding.bookName.text = mainViewModel.getSelectedBook().name
+                        if(book!=null){
+                            Glide.with(this)
+                                .load(book.image)
+                                .placeholder(R.drawable.song_circle)
+                                .error(R.drawable.song_circle)
+                                .into(binding.songImg)
+                            binding.bookName.text = book.name
+                        }
+
+
                         if (musicService?.mediaPlayer?.isPlaying == true) {
                             binding.btnPlay.setImageResource(R.drawable.icon_pause)
                         } else {
@@ -446,6 +465,11 @@ class MainActivity : AppCompatActivity() {
                         }
 
                         musicService!!.btnCloseClick!!.observe(this) {
+                            if (musicService?.mediaPlayer?.isPlaying == true) {
+                                binding.btnPlay.setImageResource(R.drawable.icon_pause)
+                            } else {
+                                binding.btnPlay.setImageResource(R.drawable.icon_play)
+                            }
                             binding.btnPlay.setImageResource(R.drawable.icon_play)
                         }
                     }
@@ -694,74 +718,31 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun onBackPressedHandle() {
+        onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+
+                val currentState = mainViewModel.appState.value!!.peek()
+                if (currentState == MainViewModel.Companion.State.Home ||
+                    currentState == MainViewModel.Companion.State.Search ||
+                    currentState == MainViewModel.Companion.State.Favorite ||
+                    currentState == MainViewModel.Companion.State.User ||
+                    currentState == MainViewModel.Companion.State.Subscription
+                ) {
+                    showExitConfirmationDialog()
+                }else if(currentState==MainViewModel.Companion.State.ReadBook){
+                    mainViewModel.updateSongControlVisibility(true)
+                    mainViewModel.returnLastState()
+                }
+                else{
+                    mainViewModel.returnLastState()
+                }
+            }
+        })
+    }
+
 }
 
-
-//
-
-//
-//    private fun setUpBinding() {
-//
-//        binding = MainBinding.inflate(layoutInflater)
-//        setContentView(binding.root)
-//        mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
-//
-//        sharedPreferences = this.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-//
-//        loadSignInAccount()
-//
-//        binding.btnPlay.setOnClickListener {
-//            musicService?.btnPlayClick?.postValue(Unit)
-//            musicService?.play()
-//            if (musicService?.mediaPlayer?.isPlaying == true) {
-//                binding.btnPlay.setImageResource(R.drawable.icon_pause)
-//            } else {
-//                binding.btnPlay.setImageResource(R.drawable.icon_play)
-//            }
-//        }
-//
-//        topAppBarItemClick()
-//
-//
-//        //----------------------------------------------------------------------------------------//
-//        mainViewModel.updateState(MainViewModel.Companion.State.Home)
-//
-//    }
-//
-
-//
-//    private fun onBackPressedHandle() {
-//        onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
-//            override fun handleOnBackPressed() {
-//
-//                val currentState = mainViewModel.currentState.value
-//                if (currentState == MainViewModel.Companion.State.Home ||
-//                    currentState == MainViewModel.Companion.State.Search ||
-//                    currentState == MainViewModel.Companion.State.Favorite ||
-//                    currentState == MainViewModel.Companion.State.User ||
-//                    currentState == MainViewModel.Companion.State.Subscription
-//                ) {
-//                    showExitConfirmationDialog()
-//                } else if (currentState == MainViewModel.Companion.State.SignIn ||
-//                    currentState == MainViewModel.Companion.State.SignUp
-//                ) {
-//                    mainViewModel.updateState(MainViewModel.Companion.State.User)
-//                }else if(currentState==MainViewModel.Companion.State.DetailBook){
-//                    mainViewModel.updateState(MainViewModel.Companion.State.Home)
-//                } else {
-//                    mainViewModel.updateState(mainViewModel.lastState.value!!)
-//                }
-//            }
-//        })
-//    }
-//
-
-//
-
-//
-
-
-//
 
 
 

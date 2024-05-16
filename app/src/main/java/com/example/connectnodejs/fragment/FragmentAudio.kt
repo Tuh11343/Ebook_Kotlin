@@ -153,7 +153,7 @@ class FragmentAudio(
         mainViewModel.resetAudio.observe(activity) {
 
             //--------------------------- Reset Media Player Component --------------//
-            selectedBook=mainViewModel.getSelectedBook()
+            selectedBook=mainViewModel.getSelectedBook()!!
             binding.seekBar.max = 0
             binding.totalTime.text = "00:00"
             binding.currentTime.text = "00:00"
