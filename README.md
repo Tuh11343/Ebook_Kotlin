@@ -87,7 +87,7 @@ Clone the project
 ## Usage
 
 - FragmentHome
-  ![home](https://github.com/Tuh11343/Ebook_Kotlin/assets/86562442/feb3355e-a9d7-4d25-9f54-d9150405382d =250x250)
+  <img width="250" src="https://github.com/Tuh11343/Ebook_Kotlin/assets/86562442/feb3355e-a9d7-4d25-9f54-d9150405382d" />
 - FragmentSearch
 - FragmentFavorite
 - FragmentUser
