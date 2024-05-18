@@ -56,6 +56,7 @@ Mobile app for reading book online
 - [Features](#features)
 - [Environment Variables](#environment-variables)
 - [Run Locally](#run-)
+- [Usage](#usage)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 
@@ -82,7 +83,18 @@ Clone the project
 - Connect to the same wifi and change your URL network/RetrofitClient.kt
   Example
   - Turn on cmd and run ipconfig to get the IPV4
-    
+
+## Usage
+
+- FragmentHome
+- FragmentSearch
+- FragmentFavorite
+- FragmentUser
+- FragmentAuthor
+- FragmentDetailBook
+- FragmentReadBook
+- FragmentLyric
+
 ## Acknowledgements
 
 - [Android Developer](https://developer.android.com/)
