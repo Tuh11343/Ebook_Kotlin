@@ -139,6 +139,7 @@ Clone the project
 
 - [Android Developer](https://developer.android.com/)
 - [Firebase](https://firebase.google.com/)
+- [Stripe](https://stripe.com/)
 
 ## License
 
