@@ -1,4 +1,4 @@
-# EBOOk
+# EBOOK
 
 Mobile app for reading book online
 
